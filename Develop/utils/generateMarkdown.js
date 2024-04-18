@@ -18,9 +18,9 @@ function renderLicenseBadge(license) {
 // If there is no license, return an empty string
 function renderLicenseLink(license) {
   if(license === 'MIT'){
-    return `[MIT Lincense](https://opensource.org/licenses/MIT)`
+    return `[MIT License](https://opensource.org/licenses/MIT)`
   }else if(license === 'ISC'){
-    return `[ISC Lincense](https://opensource.org/licenses/ISC)`
+    return `[ISC License](https://opensource.org/licenses/ISC)`
   }else if(license ==='GNU'){
     return `[GNU License](https://www.gnu.org/licenses/gpl-3.0)`
   }else if(license ==='Eclipse'){
@@ -35,7 +35,7 @@ function renderLicenseLink(license) {
 function renderLicenseSection(license) {
   if(license !== 'None'){
     return `## License 📝
-    This application is covered by the ${license} license.`
+  This application is covered by the ${license} license.`
   }
   return ``;
 }
@@ -80,9 +80,9 @@ function generateMarkdown(data) {
     ${data.test}
 
   ## Questions 🙋
-    If there are any questions, feel free to contact my email at: ${data.email}
+  If there are any questions, feel free to contact my email at: ${data.email}
 
-    You can also find me on GitHub at: [${data.userName}](https://www.github.com/${data.userName})
+  You can also find me on GitHub at:[${data.userName}](https://www.github.com/${data.userName})
 
 `;
 }
