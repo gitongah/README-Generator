@@ -7,16 +7,30 @@ const questions = [
   {
     type: 'input',
     message: 'What is your projects name??',
-    name:'title'
+    name:'title',
+    default: 'Project Title',
+    validate: ((answer)=>{
+      if( answer.length < 1){
+        return console.log('A valid project title is required. ')
+      }
+      return true;
+    })
   },
   {
     type: 'input',
     message: 'Please write the description of your project',
-    name:'description'
+    name:'description',
+    default: 'Project Description',
+    validate: ((answer)=>{
+      if( answer.length < 1){
+        return console.log('A valid project description is required. ')
+      }
+      return true;
+    })
   },
   {
     type: 'input',
-    message: 'please give details of the installation instructions',
+    message: 'If applicable, please give details of the installation instructions',
     name:'instalation'
   },
   {
@@ -69,6 +83,7 @@ function init() {
   console.log('Initialization of the application....');
 
     inquirer.prompt(questions).then((response) =>{
+      console.log(response)
       writeToFile('README.md', genearateMarkdown({...response}))
 
   })
