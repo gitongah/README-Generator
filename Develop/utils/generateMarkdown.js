@@ -64,19 +64,19 @@ function generateMarkdown(data) {
  
     
   ## Installation ⚙️
-    ${data.instalation}
+  ${data.instalation}
 
   ## Usage 🎮
-    ${data.usage}
+  ${data.usage}
 
   ${renderLicenseSection(data.license)}
     ${renderLicenseLink(data.license)}
 
   ## Contributing 🧑‍🤝‍🧑
-    ${data.contributing}
+  ${data.contributing}
 
   ## Test  🧪
-    ${data.test}
+  ${data.test}
 
   ## Questions 🙋
   If there are any questions, feel free to contact my email at: ${data.email}
