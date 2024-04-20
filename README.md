@@ -16,10 +16,10 @@
  
     
   ## Installation ⚙️
-    To be able to run this command line application you need to have Node installed in your computer. Using the npm package manager you will need to install the Inquirer package. This package is used to get user information as the run the application.
+   To be able to run this command line application you need to have Node installed in your computer. Using the npm package manager you will need to install the Inquirer package. This package is used to get user information as the run the application.
 
   ## Usage 🎮
-    This project is ment to be used by developers like me who find it challenging to create a README for their project. This application promts the users with questions to answer about their project and based on the answers creates a proffesional README file.
+   This project is ment to be used by developers like me who find it challenging to create a README for their project. This application promts the users with questions to answer about their project and based on the answers creates a proffesional README file.
 
   ## License 📝
   This application is covered by the MIT license.
