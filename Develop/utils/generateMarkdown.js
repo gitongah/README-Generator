@@ -44,46 +44,73 @@ function renderLicenseSection(license) {
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
-  return `
-
-  # ${data.title}
-
-  ${renderLicenseBadge(data.license)}
-
-
-  ### Description 🔎
-
-  ${data.description}
+  let tablOfContent = `### Table of Contents 📖
+  `;
   
-  ### Table of Contents 📖
-  - [Installation](#installation-⚙️)
-  - [Usage](#usage-🎮)
-  - [Contributing](#contributing-🧑‍🤝‍🧑)
-  - [Test](#test-🧪)
-  - [Questions](#questions-🙋)
- 
-    
-  ## Installation ⚙️
+  if(data.instalation !== ''){
+    tablOfContent +=`- [Installation](#installation-⚙️)
+  `
+  };
+
+  if(data.usage !== ''){
+    tablOfContent +=`- [Usage](#usage-🎮)
+  `
+  };
+
+  if(data.contributing !== ''){
+    tablOfContent += `- [Contributing](#contributing-🧑‍🤝‍🧑)
+  `
+  };
+
+  if(data.test !== ''){
+    tablOfContent += `- [Test](#test-🧪)
+  `
+  };
+
+  let sampleMarkdown = `
+  # ${data.title}
+  ${renderLicenseBadge(data.license)}
+  ## Description 🔎
+  ${data.description}
+  `
+//Adding the table of content to the markdown
+  sampleMarkdown += tablOfContent;
+
+  if(data.instalation !==''){
+    sampleMarkdown +=`## Installation ⚙️
   ${data.instalation}
-
-  ## Usage 🎮
+  `
+  };
+  if(data.usage !==''){
+    sampleMarkdown +=`## Usage 🎮
   ${data.usage}
+  `
+  };
 
+  sampleMarkdown += `  
   ${renderLicenseSection(data.license)}
     ${renderLicenseLink(data.license)}
+  `
 
-  ## Contributing 🧑‍🤝‍🧑
+  if(data.contributing !== ''){
+    sampleMarkdown +=`## Contributing 🧑‍🤝‍🧑
   ${data.contributing}
+  `
+  };
 
-  ## Test  🧪
+  if(data.test !== ''){
+    sampleMarkdown +=`## Test  🧪
   ${data.test}
-
+  `
+  };
+  sampleMarkdown +=`
   ## Questions 🙋
   If there are any questions, feel free to contact my email at: ${data.email}
 
   You can also find me on GitHub at:[${data.userName}](https://www.github.com/${data.userName})
+  `
 
-`;
+  return sampleMarkdown;
+
 }
-
 module.exports = generateMarkdown;
