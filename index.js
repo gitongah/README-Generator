@@ -1,8 +1,10 @@
-// TODO: Include packages needed for this application
+// packages needed for this application to run. 
+//The inquirer used to get the users input
 const inquirer = require('inquirer');
+// the fs module enables us to be able to interact with the file system
 const fs = require('fs');
 const genearateMarkdown = require('./utils/generateMarkdown');
-// TODO: Create an array of questions for user input
+// an array of of questions to ask the user and get feedback
 const questions = [
   {
     type: 'input',
@@ -69,7 +71,7 @@ const questions = [
 
 ];
 
-// TODO: Create a function to write README file
+// a function to write  the readREADME file
 
 function writeToFile(fileName, data) {
 
@@ -78,13 +80,13 @@ function writeToFile(fileName, data) {
   });
 }
 
-// TODO: Create a function to initialize app
+//A function to initialize app
 function init() {
   console.log('Initialization of the application....');
 
     inquirer.prompt(questions).then((response) =>{
       console.log(response)
-      writeToFile('README.md', genearateMarkdown({...response}))
+      writeToFile('SampleREADME.md', genearateMarkdown({...response}))
 
   })
   
